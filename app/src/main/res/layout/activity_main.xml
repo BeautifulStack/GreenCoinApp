@@ -211,6 +211,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/wallet"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="285dp"
