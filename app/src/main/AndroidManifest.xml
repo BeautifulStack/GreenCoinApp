@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FairRepack">
-        <activity android:name=".Profil"></activity>
+        <activity android:name=".Send"></activity>
         <activity android:name=".Bills" />
         <activity android:name=".MainActivity">
             <intent-filter>
