@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     private CardView bills;
-    private ImageView profil;
+    private CardView send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        profil = (ImageView) findViewById(R.id.profil);
-        profil.setOnClickListener(new View.OnClickListener() {
+        send = (CardView) findViewById(R.id.send);
+        send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity3();
@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openActivity3() {
-        Intent intent = new Intent(this, Profil.class);
+    public void openActivity3(){
+        Intent intent = new Intent(this, Send.class);
         startActivity(intent);
     }
+
 }
