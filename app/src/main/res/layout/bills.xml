@@ -240,55 +240,6 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
-
-            <ImageView
-                android:layout_width="380dp"
-                android:layout_height="100dp"
-                android:background="@drawable/cv5"/>
-
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:background="@drawable/preview"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_centerVertical="true"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- 100 GC"
-                android:layout_marginLeft="280dp"
-                android:layout_marginTop="35dp"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Books"
-                android:textColor="#d703082b"
-                android:textSize="23dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="30dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="UNDP"
-                android:textColor="#6003082b"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="65dp"/>
-
-        </RelativeLayout>
-
 
     </LinearLayout>
 
