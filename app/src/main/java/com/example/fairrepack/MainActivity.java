@@ -12,9 +12,7 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
     private CardView bills;
     private CardView send;
-
     private CardView wallet;
-
     private ImageView Gwallet;
 
 
