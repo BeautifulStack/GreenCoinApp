@@ -11,9 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FairRepack">
-        <activity android:name=".Wallet"></activity>
+
+        <activity android:name=".GenerateWallet"></activity>
+
         <activity android:name=".Send" />
         <activity android:name=".Bills" />
+        <activity android:name=".Wallet">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
