@@ -11,7 +11,7 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
     private CardView bills;
     private CardView send;
-    private ImageView wallet;
+    private ImageView Gwallet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        wallet = (ImageView) findViewById(R.id.newwallet);
-        wallet.setOnClickListener(new View.OnClickListener() {
+        Gwallet = (ImageView) findViewById(R.id.newwallet);
+        Gwallet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity4();

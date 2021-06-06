@@ -62,11 +62,14 @@
                         android:id="@+id/button"
                         android:layout_width="219dp"
                         android:layout_height="82dp"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginLeft="64dp"
+                        android:layout_marginBottom="108dp"
                         android:text="GENERATE"
                         app:backgroundTint="#2FADE6"
-                        app:cornerRadius="30"
-                        tools:layout_editor_absoluteX="66dp"
-                        tools:layout_editor_absoluteY="202dp" />
+                        app:cornerRadius="30dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
                         android:layout_width="300dp"
