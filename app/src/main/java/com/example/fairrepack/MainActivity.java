@@ -5,13 +5,18 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.service.quickaccesswallet.WalletCard;
 import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     private CardView bills;
     private CardView send;
+
+    private CardView wallet;
+
     private ImageView Gwallet;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        wallet = (CardView) findViewById(R.id.wallet);
+        wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity5();
+            }
+        });
+
         Gwallet = (ImageView) findViewById(R.id.newwallet);
         Gwallet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 openActivity4();
             }
         });
+
 
     }
 
@@ -54,9 +69,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openActivity5(){
+        Intent intent = new Intent(this, Wallet.class);
+        startActivity(intent);
+    }
+
+
+
     public void openActivity4(){
         Intent intent = new Intent(this, GenerateWallet.class);
         startActivity(intent);
     }
+
 
 }
