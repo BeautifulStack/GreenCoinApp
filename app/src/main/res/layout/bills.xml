@@ -10,13 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
-        <Button
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/arrow_left"/>
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="220dp"
@@ -29,6 +22,7 @@
             android:text="My Transactions"
             android:textStyle="bold"
             android:textSize="25dp"
+            android:fontFamily="@font/montmedium"
             android:textColor="#df03082b"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"/>
@@ -77,6 +71,7 @@
                 android:text="Help Covid"
                 android:textColor="#d703082b"
                 android:textSize="23dp"
+                android:fontFamily="@font/montmedium"
                 android:textStyle="bold"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="30dp"/>
@@ -134,6 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="For Refugees and children"
+                android:fontFamily="@font/montmedium"
                 android:textColor="#6003082b"
                 android:textSize="14dp"
                 android:textStyle="bold"
@@ -183,6 +179,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="From all kinds of disease"
+                android:fontFamily="@font/montmedium"
                 android:textColor="#6003082b"
                 android:textSize="14dp"
                 android:textStyle="bold"
@@ -232,6 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="UN Refugee Agency"
+                android:fontFamily="@font/montmedium"
                 android:textColor="#6003082b"
                 android:textSize="14dp"
                 android:textStyle="bold"
