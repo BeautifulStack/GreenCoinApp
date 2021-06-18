@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Send"
-    android:background="@drawable/bgbill">
+    android:background="@drawable/bgbill"
+    tools:context=".Send">
 
 
     <TextView

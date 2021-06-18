@@ -1,41 +1,46 @@
 package com.example.fairrepack;
 
-import com.example.fairrepack.utils.WalletTool;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.service.quickaccesswallet.WalletCard;
-import android.view.View;
-import android.widget.ImageView;
+import com.example.fairrepack.utils.WalletTool;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
+    String address = null;
     private CardView bills;
     private CardView send;
     private CardView wallet;
     private ImageView Gwallet;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        WalletTool wallet_tool = null;
-
-        try {
-            wallet_tool = new WalletTool(true, getApplicationContext());
-            //wallet_tool = new WalletTool(getApplicationContext());
-        } catch (Exception e){
-            e.printStackTrace();
+        Context context = getApplicationContext();
+        File file = new File(context.getFilesDir(), "private.key");
+        if (!file.exists()) {
+            Intent i = new Intent(MainActivity.this, GenerateWallet.class);
+            startActivity(i);
+            finish();
+        } else {
+            WalletTool wallet = WalletTool.get_wallet(context.getFilesDir().getPath(), context);
+            if (wallet == null) {
+                Toast.makeText(MainActivity.this, "Corrupted key, clear storage to generate a new one", Toast.LENGTH_LONG).show();
+            } else {
+                System.out.println("DEBUG : public key : " + wallet.getAddress());
+                address = wallet.getAddress();
+            }
         }
-
-        assert wallet_tool != null;
-        System.out.println(wallet_tool.getPublicKey());
 
         bills = (CardView) findViewById(R.id.bills);
         bills.setOnClickListener(new View.OnClickListener() {
@@ -78,19 +83,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openActivity3(){
+    public void openActivity3() {
         Intent intent = new Intent(this, Send.class);
         startActivity(intent);
     }
 
-    public void openActivity5(){
+    public void openActivity5() {
         Intent intent = new Intent(this, Wallet.class);
         startActivity(intent);
     }
 
 
-
-    public void openActivity4(){
+    public void openActivity4() {
         Intent intent = new Intent(this, GenerateWallet.class);
         startActivity(intent);
     }

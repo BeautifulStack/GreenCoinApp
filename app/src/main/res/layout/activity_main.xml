@@ -2,37 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_home"
-    tools:context=".MainActivity"
+    android:background="@drawable/bapp"
     android:orientation="vertical"
-    android:background="@drawable/bapp">
+    tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
         android:paddingLeft="25dp"
+        android:paddingTop="30dp"
         android:paddingRight="25dp">
 
         <TextView
             android:id="@+id/t1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome Back !"
             android:fontFamily="@font/montmedium"
-            android:textSize="30dp"
-            android:textColor="#fff" />
-
+            android:text="Welcome Back !"
+            android:textColor="#fff"
+            android:textSize="30dp" />
 
 
         <ImageView
             android:id="@+id/newwallet"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/profile"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:src="@drawable/profile" />
 
     </RelativeLayout>
 
@@ -51,8 +50,8 @@
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/cap"
-                android:layout_marginTop="0dp"/>
+                android:layout_marginTop="0dp"
+                app:srcCompat="@drawable/cap" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -60,8 +59,8 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="24dp"
-                android:text="GREEN COINS CARD"
                 android:fontFamily="@font/montsemibold"
+                android:text="GREEN COINS CARD"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -115,8 +114,8 @@
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="20dp"
-            android:text="Featured"
             android:fontFamily="@font/montsemibold"
+            android:text="Featured"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -179,8 +178,8 @@
                         android:layout_marginStart="52dp"
                         android:layout_marginLeft="52dp"
                         android:layout_marginBottom="1dp"
-                        android:text="Send"
                         android:fontFamily="@font/montmedium"
+                        android:text="Send"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -194,8 +193,8 @@
                         android:layout_marginStart="88dp"
                         android:layout_marginLeft="88dp"
                         android:layout_marginTop="163dp"
-                        android:text="Bills"
                         android:fontFamily="@font/montmedium"
+                        android:text="Bills"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -209,8 +208,8 @@
                         android:layout_marginStart="210dp"
                         android:layout_marginLeft="210dp"
                         android:layout_marginTop="162dp"
-                        android:text="Wallet"
                         android:fontFamily="@font/montmedium"
+                        android:text="Wallet"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -290,7 +289,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

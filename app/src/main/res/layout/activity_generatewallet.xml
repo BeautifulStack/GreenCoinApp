@@ -59,7 +59,7 @@
                     android:layout_height="match_parent">
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/import_btn"
                         android:layout_width="219dp"
                         android:layout_height="82dp"
                         android:layout_marginStart="64dp"
@@ -73,13 +73,14 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
                     <Button
+                        android:id="@+id/generate_btn"
                         android:layout_width="219dp"
                         android:layout_height="82dp"
                         android:layout_marginStart="64dp"
                         android:layout_marginLeft="64dp"
                         android:layout_marginBottom="64dp"
-                        android:text="GENERATE"
                         android:fontFamily="@font/montbold"
+                        android:text="GENERATE"
                         app:backgroundTint="#2FADE6"
                         app:cornerRadius="30dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -94,8 +95,8 @@
                         android:layout_marginEnd="17dp"
                         android:layout_marginRight="17dp"
                         android:layout_marginBottom="5dp"
-                        android:text="Started to Donate"
                         android:fontFamily="@font/montmedium"
+                        android:text="Started to Donate"
                         android:textColor="@color/black"
                         android:textSize="30sp"
                         android:textStyle="bold"
@@ -114,8 +115,8 @@
                         android:layout_marginLeft="80dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:text="Green Coins"
                         android:fontFamily="@font/montsemibold"
+                        android:text="Green Coins"
                         android:textColor="@color/black"
                         android:textSize="35sp"
                         android:textStyle="bold"
