@@ -84,6 +84,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -91,7 +92,7 @@
                 android:layout_marginTop="100dp"
                 android:fontFamily="@font/montsemibold"
                 android:letterSpacing="0.02"
-                android:text="4,785,45 Coins"
+                android:text="0 Coins"
                 android:textColor="@color/white"
                 android:textSize="26sp"
                 android:textStyle="bold"

@@ -48,43 +48,25 @@
                 android:background="@drawable/cv1"
                 android:layout_marginTop="15dp"/>
 
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:background="@drawable/preview"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_centerVertical="true"/>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- 100 GC"
                 android:layout_marginLeft="280dp"
                 android:layout_marginTop="35dp"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
+                android:text="-  GC"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Help Covid"
+                android:text=""
                 android:textColor="#d703082b"
                 android:textSize="23dp"
                 android:fontFamily="@font/montmedium"
                 android:textStyle="bold"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="30dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="For Nurses and doctors"
-                android:textColor="#6003082b"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="65dp"/>
 
         </RelativeLayout>
 
@@ -98,43 +80,25 @@
                 android:layout_height="100dp"
                 android:background="@drawable/cv2"/>
 
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:background="@drawable/preview"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_centerVertical="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" -10 GC"
-                android:layout_marginLeft="300dp"
+                android:layout_marginLeft="290dp"
                 android:layout_marginTop="35dp"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
+                android:text=" - GC"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Feeding the hungry"
+                android:text=""
                 android:textColor="#d703082b"
                 android:textSize="23dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="30dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="For Refugees and children"
-                android:fontFamily="@font/montmedium"
-                android:textColor="#6003082b"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="65dp"/>
 
         </RelativeLayout>
 
@@ -148,43 +112,14 @@
                 android:layout_height="100dp"
                 android:background="@drawable/cv3"/>
 
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:background="@drawable/preview"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_centerVertical="true"/>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- 150 GC"
+                android:text="   - GC"
                 android:layout_marginLeft="280dp"
                 android:layout_marginTop="35dp"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Healing the sick"
-                android:textColor="#d703082b"
-                android:textSize="23dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="30dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="From all kinds of disease"
-                android:fontFamily="@font/montmedium"
-                android:textColor="#6003082b"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="65dp"/>
 
         </RelativeLayout>
 
@@ -198,18 +133,10 @@
                 android:layout_height="100dp"
                 android:background="@drawable/cv4"/>
 
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:background="@drawable/preview"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_centerVertical="true"/>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- 140 GC"
+                android:text="  -  GC"
                 android:layout_marginLeft="281dp"
                 android:layout_marginTop="35dp"
                 android:textStyle="bold"
@@ -218,23 +145,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Helping children"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="30dp"
+                android:text=""
                 android:textColor="#d703082b"
                 android:textSize="23dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="30dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="UN Refugee Agency"
-                android:fontFamily="@font/montmedium"
-                android:textColor="#6003082b"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="65dp"/>
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
