@@ -30,7 +30,7 @@ public class Send extends AppCompatActivity implements View.OnClickListener {
         scanCode();
     }
 
-    private void scanCode(){
+    private void scanCode() {
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setCaptureActivity(CaptureAct.class);
         integrator.setOrientationLocked(false);
@@ -40,10 +40,10 @@ public class Send extends AppCompatActivity implements View.OnClickListener {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (result != null){
-            if (result.getContents() != null){
+        if (result != null) {
+            if (result.getContents() != null) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Scanning Result");
                 builder.setMessage(result.getContents());

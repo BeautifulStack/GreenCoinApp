@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Wallet"
-    android:background="@drawable/bgbill">
+    android:background="@drawable/bgbill"
+    tools:context=".Wallet">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -134,8 +134,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
-                android:text="SMART WALLET"
                 android:fontFamily="@font/montsemibold"
+                android:text="SMART WALLET"
                 android:textColor="#3086CA"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -195,9 +195,9 @@
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/montmedium"
             android:letterSpacing="0.05"
             android:text="My Wallet"
-            android:fontFamily="@font/montmedium"
             android:textColor="@color/white"
             android:textSize="45sp"
             android:textStyle="bold"
