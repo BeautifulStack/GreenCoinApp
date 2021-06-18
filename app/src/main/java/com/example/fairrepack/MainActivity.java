@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.example.fairrepack.utils.WalletTool;
+import com.example.fairrepack.utils.Wallet;
 
 import java.io.File;
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
             finish();
         } else {
-            WalletTool wallet = WalletTool.get_wallet(context.getFilesDir().getPath(), context);
+            Wallet wallet = Wallet.get_wallet(context.getFilesDir().getPath(), context);
             if (wallet == null) {
                 Toast.makeText(MainActivity.this, "Corrupted key, clear storage to generate a new one", Toast.LENGTH_LONG).show();
             } else {
@@ -79,17 +79,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivity2() {
-        Intent intent = new Intent(this, Bills.class);
+        Intent intent = new Intent(this, BillsActivity.class);
         startActivity(intent);
     }
 
     public void openActivity3() {
-        Intent intent = new Intent(this, Send.class);
+        Intent intent = new Intent(this, SendActivity.class);
         startActivity(intent);
     }
 
     public void openActivity5() {
-        Intent intent = new Intent(this, Wallet.class);
+        Intent intent = new Intent(this, WalletActivity.class);
         startActivity(intent);
     }
 

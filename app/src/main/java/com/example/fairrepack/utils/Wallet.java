@@ -29,7 +29,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 /**
  * Class used to interact with RSA keys and signature algorithm
  */
-public class WalletTool {
+public class Wallet {
     private final PublicKey publicKey;
     private final PrivateKey privateKey;
     private final String address;
@@ -42,7 +42,7 @@ public class WalletTool {
      * @throws Exception Only need to handle IOException if the file doesn't exist
      *                   or NoSuchAlgorithmException if file is corrupted
      */
-    private WalletTool(Context context) throws Exception {
+    private Wallet(Context context) throws Exception {
         byte[] file = Files.readAllBytes(Paths.get("private.key"));
 
         file = Base64.getDecoder().decode(file);
@@ -58,7 +58,7 @@ public class WalletTool {
 
         MessageDigest digest = MessageDigest.getInstance("SHA256");
         byte[] encodedHash = digest.digest(this.getPublicKey().getBytes(StandardCharsets.UTF_8));
-        this.address = WalletTool.toHexString(encodedHash);
+        this.address = Wallet.toHexString(encodedHash);
     }
 
     /**
@@ -67,7 +67,7 @@ public class WalletTool {
      * @throws Exception Only need to handle IOException if the file doesn't exist
      *                   or NoSuchAlgorithmException if file is corrupted
      */
-    private WalletTool(String path, Context context) throws Exception {
+    private Wallet(String path, Context context) throws Exception {
         // PRIVATE
         byte[] file = Files.readAllBytes(Paths.get(path + "/private.key"));
         file = Base64.getDecoder().decode(file);
@@ -99,7 +99,7 @@ public class WalletTool {
      * @param b Precise to generate a new key pair
      * @throws Exception Same as the precious constructor
      */
-    private WalletTool(boolean b, Context context) throws Exception {
+    private Wallet(boolean b, Context context) throws Exception {
         // Generate new pair of RSA keys
         KeyPair key_pair = buildKeyPair();
         this.publicKey = key_pair.getPublic();
@@ -125,17 +125,17 @@ public class WalletTool {
 
     }
 
-    public static WalletTool get_wallet(String path, Context context) {
+    public static Wallet get_wallet(String path, Context context) {
         if (path == null) {
             try {
-                return new WalletTool(true, context);
+                return new Wallet(true, context);
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;
             }
         } else {
             try {
-                return new WalletTool(path, context);
+                return new Wallet(path, context);
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;

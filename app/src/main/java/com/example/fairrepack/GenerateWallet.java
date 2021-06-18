@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.fairrepack.utils.WalletTool;
+import com.example.fairrepack.utils.Wallet;
 
 public class GenerateWallet extends AppCompatActivity {
     private Button import_btn, generate_btn;
@@ -24,7 +24,7 @@ public class GenerateWallet extends AppCompatActivity {
         this.generate_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WalletTool wallet = WalletTool.get_wallet(null, getApplicationContext());
+                Wallet wallet = Wallet.get_wallet(null, getApplicationContext());
                 if (wallet == null) {
                     Toast.makeText(GenerateWallet.this, "Error generating wallet, try again", Toast.LENGTH_SHORT).show();
                 } else {
