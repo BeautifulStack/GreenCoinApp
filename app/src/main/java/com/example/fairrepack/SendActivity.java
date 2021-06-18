@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-public class Send extends AppCompatActivity implements View.OnClickListener {
+public class SendActivity extends AppCompatActivity implements View.OnClickListener {
     private Button scan;
 
     @Override
