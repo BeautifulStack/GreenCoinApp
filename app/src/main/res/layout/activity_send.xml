@@ -175,10 +175,10 @@
             app:backgroundTint="#FFFFFF"
             app:cornerRadius="30dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/address" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
