@@ -27,6 +27,7 @@ import okhttp3.Request;
 
 public class MainActivity extends AppCompatActivity {
     String address = null;
+    int max_amount = 0;
     private CardView bills;
     private CardView send;
     private CardView wallet;
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Response response_json = gson.fromJson(myResponse, Response.class);
+                            max_amount = response_json.balance;
                             balance.setText(response_json.balance + " Coins");
                         }
                     });
@@ -103,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity3();
+                openActivity3(max_amount);
             }
         });
 
@@ -132,8 +134,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openActivity3() {
+    public void openActivity3(int max_amount) {
         Intent intent = new Intent(this, SendActivity.class);
+        intent.putExtra("max", max_amount);
         startActivity(intent);
     }
 
