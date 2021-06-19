@@ -223,4 +223,9 @@ public class Wallet {
     public String getAddress() {
         return address;
     }
+
+    public static boolean delete_wallet(Context context) {
+        File file = new File(context.getFilesDir(), "private.key");
+        return file.delete();
+    }
 }

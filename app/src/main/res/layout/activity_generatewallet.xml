@@ -20,7 +20,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/delete_wallet"
                 android:layout_width="367dp"
                 android:layout_height="320dp"
                 android:layout_marginStart="28dp"
