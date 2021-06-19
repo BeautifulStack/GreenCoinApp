@@ -5,14 +5,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.fairrepack.utils.Wallet;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 
 public class MainActivity extends AppCompatActivity {
     String address = null;
@@ -20,11 +31,14 @@ public class MainActivity extends AppCompatActivity {
     private CardView send;
     private CardView wallet;
     private ImageView Gwallet;
+    private TextView balance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        balance = findViewById(R.id.balance);
 
         Context context = getApplicationContext();
         File file = new File(context.getFilesDir(), "private.key");
@@ -41,6 +55,41 @@ public class MainActivity extends AppCompatActivity {
                 address = wallet.getAddress();
             }
         }
+        Gson gson = new GsonBuilder().create();
+
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url("https://blockchain.octobyte.cloud/balance/" + address)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                e.printStackTrace();
+                Toast.makeText(MainActivity.this, "Couldn't retrieve wallet balance", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull okhttp3.Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    final String myResponse = response.body().string();
+                    MainActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Response response_json = gson.fromJson(myResponse, Response.class);
+                            balance.setText(response_json.balance + " Coins");
+                        }
+                    });
+                } else {
+                    MainActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(MainActivity.this, "Couldn't retrieve wallet balance", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+        });
 
         bills = (CardView) findViewById(R.id.bills);
         bills.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +146,11 @@ public class MainActivity extends AppCompatActivity {
     public void openActivity4() {
         Intent intent = new Intent(this, GenerateWallet.class);
         startActivity(intent);
+    }
+
+    static class Response {
+        int balance;
+        int new_balance;
     }
 
 
