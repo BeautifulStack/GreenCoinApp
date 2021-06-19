@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FairRepack">
+        <activity android:name=".ValidateActivity"></activity>
         <activity android:name=".WalletActivity" />
         <activity android:name=".GenerateWallet" />
         <activity android:name=".SendActivity" />
@@ -30,9 +31,7 @@
             android:name=".CaptureAct"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
-            android:windowSoftInputMode="stateAlwaysHidden">
-
-        </activity>
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
