@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private CardView send;
     private CardView wallet;
     private ImageView Gwallet;
+    private Button chooseAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openActivity2();
+            }
+        });
+
+        chooseAmount = (Button) findViewById(R.id.chooseAmount);
+        chooseAmount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TransferAmount();
             }
         });
 
@@ -96,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivity4() {
         Intent intent = new Intent(this, GenerateWallet.class);
+        startActivity(intent);
+    }
+
+    public void TransferAmount() {
+        Intent intent = new Intent(this, ChooseAmount.class);
         startActivity(intent);
     }
 
