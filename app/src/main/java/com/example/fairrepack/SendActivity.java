@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -15,6 +16,7 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class SendActivity extends AppCompatActivity implements View.OnClickListener {
     private Button scan;
+    private EditText address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class SendActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_send);
 
         scan = findViewById(R.id.scan);
+        address = findViewById(R.id.address);
         scan.setOnClickListener(this);
     }
 
@@ -44,22 +47,7 @@ public class SendActivity extends AppCompatActivity implements View.OnClickListe
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() != null) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("Scanning Result");
-                builder.setMessage(result.getContents());
-                builder.setPositiveButton("Scan again", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        scanCode();
-                    }
-                }).setNegativeButton("Finish", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
+                address.setText(result.getContents());
             } else {
                 Toast.makeText(this, "No results", Toast.LENGTH_LONG).show();
             }
