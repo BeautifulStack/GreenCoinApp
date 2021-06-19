@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         wallet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity5();
+                openActivity5(address);
             }
         });
 
@@ -137,8 +137,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openActivity5() {
+    public void openActivity5(String address) {
         Intent intent = new Intent(this, WalletActivity.class);
+        intent.putExtra("address", address);
         startActivity(intent);
     }
 
