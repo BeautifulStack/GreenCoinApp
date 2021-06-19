@@ -26,20 +26,11 @@ public class SendActivity extends AppCompatActivity implements View.OnClickListe
     private EditText address;
     private EditText amount;
     private TextView max;
-    private Button validateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send);
-
-        validateButton = findViewById(R.id.send_btn);
-        validateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity2();
-            }
-        });
 
         scan = findViewById(R.id.scan);
         address = findViewById(R.id.address);
@@ -67,7 +58,8 @@ public class SendActivity extends AppCompatActivity implements View.OnClickListe
                         Pattern pattern = Pattern.compile("[a-fA-F0-9]{40}");
                         Matcher matcher = pattern.matcher(address_tx);
                         if (matcher.find()){
-                            // TODO: Go to validate Tx Activity
+                            Intent intent = new Intent(SendActivity.this, ValidateActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(SendActivity.this, "Invalid receiver address !", Toast.LENGTH_LONG).show();
                         }
@@ -78,10 +70,6 @@ public class SendActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    public void openActivity2(){
-        Intent intent = new Intent(this, ValidateActivity.class);
-        startActivity(intent);
-    }
 
     @Override
     public void onClick(View v) {
