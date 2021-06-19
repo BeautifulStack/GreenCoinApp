@@ -1,5 +1,6 @@
 package com.example.fairrepack;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,7 +58,8 @@ public class SendActivity extends AppCompatActivity implements View.OnClickListe
                         Pattern pattern = Pattern.compile("[a-fA-F0-9]{40}");
                         Matcher matcher = pattern.matcher(address_tx);
                         if (matcher.find()){
-                            // TODO: Go to validate Tx Activity
+                            Intent intent = new Intent(SendActivity.this, ValidateActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(SendActivity.this, "Invalid receiver address !", Toast.LENGTH_LONG).show();
                         }
@@ -67,6 +69,7 @@ public class SendActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+
 
     @Override
     public void onClick(View v) {
