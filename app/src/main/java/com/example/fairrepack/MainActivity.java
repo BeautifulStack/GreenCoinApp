@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Response response_json = gson.fromJson(myResponse, Response.class);
+                            max_amount = response_json.balance;
                             balance.setText(response_json.balance + " Coins");
                         }
                     });
