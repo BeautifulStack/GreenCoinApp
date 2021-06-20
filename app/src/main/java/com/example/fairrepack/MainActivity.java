@@ -58,8 +58,14 @@ public class MainActivity extends AppCompatActivity {
                 address = wallet.getAddress();
             }
         }
+        int new_balance = getIntent().getIntExtra("new_balance", 0);
+        if (new_balance != 0) {
+            balance.setText(new_balance+" Coins");
+            Toast.makeText(MainActivity.this, "Success !", Toast.LENGTH_LONG).show();
+        } else {
+            get_balance();
+        }
 
-        get_balance();
 
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override

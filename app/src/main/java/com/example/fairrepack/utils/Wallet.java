@@ -183,16 +183,21 @@ public class Wallet {
      *
      * @param message String to sign
      * @return Return signature in base64 encoding
-     * @throws Exception Can't happen
      */
-    public String sign(String message) throws Exception {
-        Signature privateSignature = Signature.getInstance("SHA256withRSA");
-        privateSignature.initSign(this.privateKey);
-        privateSignature.update(message.getBytes(UTF_8));
+    public String sign(String message){
+        try {
+            Signature privateSignature = Signature.getInstance("SHA256withRSA");
+            privateSignature.initSign(this.privateKey);
+            privateSignature.update(message.getBytes(UTF_8));
 
-        byte[] signature = privateSignature.sign();
+            byte[] signature = privateSignature.sign();
 
-        return Base64.getEncoder().encodeToString(signature);
+            return Base64.getEncoder().encodeToString(signature);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 
     /**
