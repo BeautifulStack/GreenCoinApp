@@ -1,6 +1,7 @@
 package com.example.fairrepack;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.fairrepack.utils.Wallet;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -58,8 +60,18 @@ public class SendActivity extends AppCompatActivity implements View.OnClickListe
                         Pattern pattern = Pattern.compile("[a-fA-F0-9]{40}");
                         Matcher matcher = pattern.matcher(address_tx);
                         if (matcher.find()){
-                            Intent intent = new Intent(SendActivity.this, ValidateActivity.class);
-                            startActivity(intent);
+
+                            Context context = getApplicationContext();
+                            Wallet wallet = Wallet.get_wallet(context.getFilesDir().getPath(), context);
+
+                            if (address_tx.equals(wallet.getAddress())) {
+                                Toast.makeText(SendActivity.this, "You can't send funds to yourself !", Toast.LENGTH_LONG).show();
+                            } else {
+                                Intent intent = new Intent(SendActivity.this, ValidateActivity.class);
+                                intent.putExtra("address", address_tx);
+                                intent.putExtra("amount", amount_tx);
+                                startActivity(intent);
+                            }
                         } else {
                             Toast.makeText(SendActivity.this, "Invalid receiver address !", Toast.LENGTH_LONG).show();
                         }

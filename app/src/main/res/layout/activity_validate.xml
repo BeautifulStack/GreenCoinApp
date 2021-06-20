@@ -46,13 +46,14 @@
                     android:textSize="30sp" />
 
                 <TextView
+                    android:id="@+id/address_tx"
                     android:layout_width="221dp"
                     android:layout_height="61dp"
-                    android:text="............"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="75dp"
+                    android:text="............"
                     android:textColor="@color/white"
-                    android:textSize="25sp" />
+                    android:textSize="15sp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -79,6 +80,7 @@
                     android:textSize="30sp" />
 
                 <TextView
+                    android:id="@+id/amount_tx"
                     android:layout_width="221dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="25dp"
@@ -96,6 +98,7 @@
             </androidx.cardview.widget.CardView>
 
             <Button
+                android:id="@+id/validate_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="136dp"
@@ -117,14 +120,15 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="65dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="65dp"
         android:fontFamily="@font/balooregular"
         android:text="Pay and Confirm"
         android:textColor="@color/white"
-        android:layout_marginLeft="45dp"
-        android:textSize="40sp"
 
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
