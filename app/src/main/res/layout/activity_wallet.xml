@@ -113,17 +113,17 @@
                 android:layout_marginRight="16dp"
                 android:text=".... ..... ....."
                 android:textColor="#3086CA"
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 tools:ignore="UnknownId" />
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="115dp"
-                android:layout_height="84dp"
+                android:layout_height="82dp"
                 android:layout_marginStart="200dp"
                 android:layout_marginLeft="400dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginBottom="32dp"
                 android:src="@drawable/wallet" />
 
@@ -135,7 +135,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/montsemibold"
-                android:text="SMART WALLET"
+                android:text="Address :"
                 android:textColor="#3086CA"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -190,17 +190,16 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/montmedium"
             android:letterSpacing="0.05"
             android:text="My Wallet"
             android:textColor="@color/white"
             android:textSize="45sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

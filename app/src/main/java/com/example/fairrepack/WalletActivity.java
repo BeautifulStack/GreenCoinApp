@@ -1,6 +1,8 @@
 package com.example.fairrepack;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,12 +15,14 @@ import android.widget.Toast;
 
 //import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.example.fairrepack.utils.Wallet;
 
 public class WalletActivity extends AppCompatActivity {
     private TextView address;
     private ImageView delete_wallet;
+    private CardView wallet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,7 @@ public class WalletActivity extends AppCompatActivity {
 
         address = findViewById(R.id.address_wallet);
         delete_wallet = findViewById(R.id.delete_wallet);
+        wallet = findViewById(R.id.wallet);
 
         address.setText(getIntent().getStringExtra("address"));
 
@@ -55,6 +60,16 @@ public class WalletActivity extends AppCompatActivity {
                 });
                 AlertDialog dialog = builder.create();
                 dialog.show();
+            }
+        });
+
+        wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Wallet Address", address.getText().toString());
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(WalletActivity.this, "Wallet address copied to clipboard !", Toast.LENGTH_SHORT).show();
             }
         });
     }
