@@ -36,13 +36,15 @@
         android:background="@drawable/cvbg"
         android:orientation="vertical">
 
+
         <ListView
+            android:id="@+id/list_tx"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp" />
-
-
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="120dp"
+            android:visibility="visible" />
     </LinearLayout>
 
 </LinearLayout>
