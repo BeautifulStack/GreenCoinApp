@@ -3,6 +3,7 @@ package com.example.fairrepack;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +12,15 @@ import com.example.fairrepack.utils.TxAdapter;
 import com.example.fairrepack.utils.Wallet;
 import com.google.gson.Gson;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
 import java.util.Arrays;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 
 public class BillsActivity extends AppCompatActivity {
     private ListView list_tx;
@@ -28,22 +37,47 @@ public class BillsActivity extends AppCompatActivity {
         Wallet wallet = Wallet.get_wallet(context.getFilesDir().getPath(), context);
         address = wallet.getAddress();
 
-        TxAdapter adapter = new TxAdapter(BillsActivity.this, Arrays.asList(this.get_transactions()), address);
-        list_tx.setAdapter(adapter);
+        get_transactions();
 
     }
 
-    private Tx[] get_transactions() {
-        String response = "{'transactions':[{'amount':500,'receiver':'54c296f64af107a3ce15fc5ad7ab5e983768246f','sender':'REWARD','time':1},{'amount':500,'receiver':'54c296f64af107a3ce15fc5ad7ab5e983768246f','sender':'f4d548sg4sed6g8s654dfg6sed85g46se85gs6ezd','time':1},{'amount':500,'receiver':'f4d548sg4sed6g8s654dfg6sed85g46se85gs6ezd','sender':'54c296f64af107a3ce15fc5ad7ab5e983768246f','time':1}]}";
-
+    private void get_transactions() {
         Gson gson = new Gson();
-        Response response1 = gson.fromJson(response, Response.class);
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url("https://blockchain.octobyte.cloud/transactions/" + address)
+                .build();
 
-        for (int i=0; i<response1.transactions.length; i++) {
-            System.out.println(response1.transactions[i].getReceiver());
-        }
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                e.printStackTrace();
+                Toast.makeText(BillsActivity.this, "Couldn't retrieve wallet balance", Toast.LENGTH_LONG).show();
+            }
 
-        return response1.transactions;
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull okhttp3.Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    final String myResponse = response.body().string();
+                    BillsActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Response response_json = gson.fromJson(myResponse, Response.class);
+
+                            TxAdapter adapter = new TxAdapter(BillsActivity.this, Arrays.asList(response_json.transactions), address);
+                            list_tx.setAdapter(adapter);
+                        }
+                    });
+                } else {
+                    BillsActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(BillsActivity.this, "Couldn't retrieve wallet balance", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+        });
     }
 
     static class Response {
