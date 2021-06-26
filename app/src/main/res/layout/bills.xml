@@ -30,10 +30,12 @@
 
         <ListView
             android:id="@+id/list_tx"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginRight="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
-            android:background="@drawable/cvbg"
             android:visibility="visible">
 
         </ListView>

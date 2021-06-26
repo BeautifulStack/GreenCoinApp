@@ -2,42 +2,88 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="60dp"
+        app:cardBackgroundColor="#54b862"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:textColor="#CCCBCB"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="Address"/>
 
         <TextView
             android:id="@+id/tx_address"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:textColor="@color/black"
-            android:text="address">
-        </TextView>
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/montregular"
+            android:text="address"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/arrayup"/>
+
+        <TextView
+            android:id="@+id/tx_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="75dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montregular"
+            android:text="date"/>
+
 
         <TextView
             android:id="@+id/tx_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="65dp"
             android:layout_weight="1"
-            android:gravity="end"
+            android:text="+ amount"
+            android:textColor="#FFFFFF"
             android:textSize="20dp"
-            android:textColor="#00FF00"
-            android:text="+ amount">
-        </TextView>
+            android:textStyle="bold"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+
+
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tx_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:text="date">
-    </TextView>
+
 
 </LinearLayout>
