@@ -18,7 +18,6 @@ public class GenerateWallet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generatewallet);
 
-        import_btn = findViewById(R.id.import_btn);
         generate_btn = findViewById(R.id.generate_btn);
 
         this.generate_btn.setOnClickListener(new View.OnClickListener() {
