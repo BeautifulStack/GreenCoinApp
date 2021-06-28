@@ -58,19 +58,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
-                        android:id="@+id/import_btn"
-                        android:layout_width="219dp"
-                        android:layout_height="82dp"
-                        android:layout_marginStart="64dp"
-                        android:layout_marginLeft="64dp"
-                        android:layout_marginBottom="108dp"
-                        android:text="IMPORT WALLET"
-                        app:backgroundTint="#2FADE6"
-                        app:cornerRadius="30dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
                     <Button
                         android:id="@+id/generate_btn"
@@ -78,7 +65,7 @@
                         android:layout_height="82dp"
                         android:layout_marginStart="64dp"
                         android:layout_marginLeft="64dp"
-                        android:layout_marginBottom="64dp"
+                        android:layout_marginBottom="85dp"
                         android:fontFamily="@font/montbold"
                         android:text="GENERATE"
                         app:backgroundTint="#2FADE6"

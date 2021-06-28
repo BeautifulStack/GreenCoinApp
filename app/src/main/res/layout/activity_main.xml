@@ -26,13 +26,6 @@
             android:textSize="30dp" />
 
 
-        <ImageView
-            android:id="@+id/newwallet"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/profile" />
-
     </RelativeLayout>
 
     <LinearLayout

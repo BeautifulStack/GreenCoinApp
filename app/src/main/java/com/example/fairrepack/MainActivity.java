@@ -100,15 +100,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Gwallet = (ImageView) findViewById(R.id.newwallet);
-        Gwallet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity4();
-            }
-        });
-
-
     }
 
     public void openActivity2() {
